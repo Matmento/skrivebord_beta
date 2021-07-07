@@ -1,3 +1,14 @@
+/*
+ 
+   _____ ___  _   _ _   _ ____    _  _____ ___ ___  _   _ 
+  |  ___/ _ \| | | | \ | |  _ \  / \|_   _|_ _/ _ \| \ | |
+  | |_ | | | | | | |  \| | | | |/ _ \ | |  | | | | |  \| |
+  |  _|| |_| | |_| | |\  | |_| / ___ \| |  | | |_| | |\  |
+  |_|   \___/ \___/|_| \_|____/_/   \_\_| |___\___/|_| \_|
+                                                          
+ 
+*/
+
 body {
   font-size: 16px;
   font-family: roboto;
@@ -13,7 +24,7 @@ body {
   --left-margin: 2.5rem;
 
   /*   Fonts  */
-  --font-size-h1: 3.5rem;
+  --font-size-h1: 3rem;
 }
 
 h1,
@@ -31,7 +42,6 @@ h1 {
 h2 {
   font-size: var(--font-size-h1);
   line-height: 130%;
-  margin-top: -2rem;
 }
 
 p {
@@ -42,15 +52,58 @@ p {
   max-width: 50ch;
 }
 
+.text-normal {
+  margin: 8rem 2rem auto var(--left-margin);
+}
+
+.text-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 6rem 4rem 6rem 4rem;
+  text-align: center;
+}
+.image {
+  width: 16.75rem;
+  height: 16.75rem;
+  border-radius: 50%;
+  margin-bottom: 4rem;
+  border: 2px solid var(--colors-black);
+  background-color: hsl(0, 0%, 90%);
+}
+
+button {
+  background-color: var(--colors-black);
+  border: none;
+  color: white;
+  padding: 12px;
+  margin-top: 1.5rem;
+  font-size: 14px;
+  width: 180px;
+}
+
+/*
+ 
+    ____ ____  ___ ____    ____  _____ ____ ___ ____ _   _ 
+   / ___|  _ \|_ _|  _ \  |  _ \| ____/ ___|_ _/ ___| \ | |
+  | |  _| |_) || || | | | | | | |  _| \___ \| | |  _|  \| |
+  | |_| |  _ < | || |_| | | |_| | |___ ___) | | |_| | |\  |
+   \____|_| \_\___|____/  |____/|_____|____/___\____|_| \_|
+                                                           
+ 
+*/
+
 .fixed {
   position: fixed;
   width: 100%;
+  z-index: 1;
 }
 
 .top_header {
   background-color: var(--colors-black);
   color: white;
   height: 4rem;
+
   /*box-shadow: 0px 4px 0px rgba(26, 26, 26, 0.25);*/
 }
 
@@ -62,66 +115,29 @@ p {
 
 .container {
   display: grid;
-  grid-template-columns: 1fr minmax(20rem, 40rem) minmax(20rem, 40rem) 1fr;
-  grid-template-rows: 17.75rem 34rem 34rem 34rem 1fr 1fr;
+  grid-template-columns: 1fr 640px 640px 1fr;
+  grid-template-rows: 17.75rem 34.25rem 34.25rem 34.25rem 1fr;
+  gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
     ". hero banner banner"
-    "d1 decorating decorating d2"
-    ". search search ."
-    "b1 bookmark bookmark b2"
+    "d1 decorating_img decorating_txt d2"
+    ". search_txt search_img ."
+    "b1 bookmark_img bookmark_txt b2"
     ". question join ."
     "footer footer footer footer";
 }
 
-.hero {
-  grid-area: hero;
-  display: flex;
+.decorating_img {
+  grid-area: decorating_img;
 }
 
-.banner {
-  grid-area: banner;
-  background-image: url(/Assets/banner_long.svg);
-  background-repeat: no-repeat;
-  width: 100%;
+.search_txt {
+  grid-area: search_txt;
 }
 
-.d1,
-.decorating,
-.d2 {
-  background-color: var(--colors-blue);
-}
-
-.decorating {
-  grid-area: decorating;
-  display: flex;
-  color: white;
-}
-
-.text {
-  margin: auto 2rem auto var(--left-margin);
-}
-
-.lottie {
-}
-
-.search {
-  grid-area: search;
-}
-
-.b1 {
-  grid-area: b1;
-  background-color: var(--colors-yellow);
-}
-
-.bookmark {
-  grid-area: bookmark;
-  background-color: var(--colors-yellow);
-}
-
-.b2 {
-  grid-area: b2;
-  background-color: var(--colors-yellow);
+.bookmark_img {
+  grid-area: bookmark_img;
 }
 
 .question {
@@ -136,6 +152,68 @@ p {
   grid-area: footer;
 }
 
-/* * {
-  border: 1px solid red;
-} */
+.d1 {
+  grid-area: d1;
+}
+
+.d2 {
+  grid-area: d2;
+}
+
+.b1 {
+  grid-area: b1;
+}
+
+.b2 {
+  grid-area: b2;
+}
+
+.banner {
+  grid-area: banner;
+  grid-area: banner;
+  background-image: url(/Assets/banner_long.svg);
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.hero {
+  grid-area: hero;
+  display: flex;
+}
+
+.decorating_txt {
+  grid-area: decorating_txt;
+  color: white;
+}
+
+.search_img {
+  grid-area: search_img;
+}
+
+.bookmark_txt {
+  grid-area: bookmark_txt;
+}
+
+.hero {
+  grid-area: hero;
+}
+
+.d1,
+.decorating_img,
+.decorating_txt,
+.d2 {
+  background-color: var(--colors-blue);
+}
+
+.b1,
+.bookmark_img,
+.bookmark_txt,
+.b2 {
+  background-color: var(--colors-yellow);
+}
+
+.footer {
+  grid-area: footer;
+  background-color: var(--colors-black);
+  height: 25rem;
+}
