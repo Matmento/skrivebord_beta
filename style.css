@@ -13,10 +13,11 @@ body {
   --left-margin: 2.5rem;
 
   /*   Fonts  */
-  --font-size-h1: 3.5rem;
+  --font-size-h1: 3rem;
 }
 
-h1 h2 {
+h1,
+h2 {
   font-family: "Raleway", sans-serif;
   font-weight: bolder;
 }
@@ -24,6 +25,10 @@ h1 h2 {
 h1 {
   width: 100%;
   margin: auto 2rem auto var(--left-margin);
+  font-size: var(--font-size-h1);
+}
+
+h2 {
   font-size: var(--font-size-h1);
 }
 
@@ -79,6 +84,14 @@ h1 {
 
 .decorating {
   grid-area: decorating;
+  display: flex;
+  color: white;
+}
+
+.text {
+}
+
+.lottie {
 }
 
 .search {
