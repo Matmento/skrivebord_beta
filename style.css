@@ -1,0 +1,116 @@
+body {
+  font-size: 16px;
+  font-family: roboto;
+}
+
+:root {
+  /* Colors */
+  --colors-black: #1a1a1a;
+  --colors-blue: #4bbefe;
+  --colors-yellow: #ffcb4a;
+
+  /* Spacing */
+  --left-margin: 2.5rem;
+
+  /*   Fonts  */
+  --font-size-h1: 3.5rem;
+}
+
+h1 h2 {
+  font-family: "Raleway", sans-serif;
+  font-weight: bolder;
+}
+
+h1 {
+  width: 100%;
+  margin: auto 2rem auto var(--left-margin);
+  font-size: var(--font-size-h1);
+}
+
+.fixed {
+  position: fixed;
+  width: 100%;
+}
+
+.top_header {
+  background-color: #1a1a1a;
+  color: white;
+  height: 4rem;
+  /*box-shadow: 0px 4px 0px rgba(26, 26, 26, 0.25);*/
+}
+
+.bottom_header {
+  height: 8rem;
+  box-shadow: 0px 4px 0px rgba(26, 26, 26, 0.25);
+  position: relative;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr minmax(20rem, 40rem) minmax(20rem, 40rem) 1fr;
+  grid-template-rows: 17.75rem 34.25rem 34.25rem 34.25rem 1fr 1fr;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". hero banner banner"
+    "d1 decorating decorating d2"
+    ". search search ."
+    "b1 bookmark bookmark b2"
+    ". question join ."
+    "footer footer footer footer";
+}
+
+.hero {
+  grid-area: hero;
+  display: flex;
+}
+
+.banner {
+  grid-area: banner;
+  background-image: url(/Assets/banner_long.svg);
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.d1,
+.decorating,
+.d2 {
+  background-color: var(--colors-blue);
+}
+
+.decorating {
+  grid-area: decorating;
+}
+
+.search {
+  grid-area: search;
+}
+
+.b1 {
+  grid-area: b1;
+  background-color: var(--colors-yellow);
+}
+
+.bookmark {
+  grid-area: bookmark;
+  background-color: var(--colors-yellow);
+}
+
+.b2 {
+  grid-area: b2;
+  background-color: var(--colors-yellow);
+}
+
+.question {
+  grid-area: question;
+}
+
+.join {
+  grid-area: join;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/* * 
+See all the boxes **/
