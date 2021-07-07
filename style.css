@@ -13,7 +13,7 @@ body {
   --left-margin: 2.5rem;
 
   /*   Fonts  */
-  --font-size-h1: 3rem;
+  --font-size-h1: 3.5rem;
 }
 
 h1,
@@ -30,6 +30,16 @@ h1 {
 
 h2 {
   font-size: var(--font-size-h1);
+  line-height: 130%;
+  margin-top: -2rem;
+}
+
+p {
+  margin-top: 2rem;
+  line-height: 150%;
+  font-size: 1.125rem;
+  font-weight: 300;
+  max-width: 50ch;
 }
 
 .fixed {
@@ -38,7 +48,7 @@ h2 {
 }
 
 .top_header {
-  background-color: #1a1a1a;
+  background-color: var(--colors-black);
   color: white;
   height: 4rem;
   /*box-shadow: 0px 4px 0px rgba(26, 26, 26, 0.25);*/
@@ -53,7 +63,7 @@ h2 {
 .container {
   display: grid;
   grid-template-columns: 1fr minmax(20rem, 40rem) minmax(20rem, 40rem) 1fr;
-  grid-template-rows: 17.75rem 34.25rem 34.25rem 34.25rem 1fr 1fr;
+  grid-template-rows: 17.75rem 34rem 34rem 34rem 1fr 1fr;
   grid-auto-flow: row;
   grid-template-areas:
     ". hero banner banner"
@@ -89,6 +99,7 @@ h2 {
 }
 
 .text {
+  margin: auto 2rem auto var(--left-margin);
 }
 
 .lottie {
@@ -125,5 +136,6 @@ h2 {
   grid-area: footer;
 }
 
-/* * 
-See all the boxes **/
+/* * {
+  border: 1px solid red;
+} */
